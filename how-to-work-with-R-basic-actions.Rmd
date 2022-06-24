@@ -1,0 +1,97 @@
+---
+title: "How to work with R - basic actions"
+author: "Bohdan Saienchuk"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+# Content:
+
+-   [basic calculations](#basic-calculations)
+-   [numeric operations with vectors](#numeric-operations-with-vectors)
+-   [data types in R](#data-types-in-R)
+* [data structure in R](#data-structure-in-R)
+
+## basic calculations {#basic-calculations}
+
+-   2 \*\* 2
+
+-   2 \^ 2
+
+-   exp(1)
+
+-   log(100, 10)
+
+-   log(100)
+
+-   round()
+
+-   floor() - округлення в меншу сторону
+
+-   ceiling() - округлення в більшу сторону
+
+[home](#Content:)
+
+## numeric operations with vectors {#numeric-operations-with-vectors}
+
+-   v \<- c(num_1, num_2, ..)
+-   якщо робити зрізи, то індекс починається з 1
+-   не можна робити відкриті запити, наприклад, v[1:], тільки v[1:3]
+-   в зріз потрапляють крайні індекси теж
+-   вибір по умові працює ось так v[v == 10] або v[v \<= 10]
+-   щоб дізнатися індекс елемента в списку which(v == 10)
+-   операції з векторами - v1 \<- c(1, 2, 3) v2 \<- c(1, 2, 3) -\> v1 + v2
+-   підняти в степінь вектор - v1 \*\* 2
+-   додавання всередині вектора - sum(c(1, 2, 3))
+-   prod(c(1, 2, 3)) - множення всередині вектора
+-   round(c(1, 2, 3)) - застосування округлення до всіх чисел вектора
+-   sort(c(1, 2, 3)) - сортування вектора по зростанню
+-   sort(c(1, 2, 3), decreasing = TRUE) - по спаданню
+-   length(c(1, 2,3)) - довжина вектора
+
+```{r}
+v1 <- c(1, 2, 3)
+v2 <- c(1, 2, 3)
+v1 + v2
+
+```
+
+```{r}
+v1 ** 2
+```
+
+[home](#Content:)
+
+## data types in R {#data-types-in-r}
+
+-   class(values) - to find dtype
+-   as.numeric(variable) - змінити тип до числового
+-   as.character(variable)
+-   gsub(',', '.', variable) - змінити символ , на .
+* as.integer(c(1.3, 2.3, 3.1))
+* is.numeric()
+* is.character()
+* is.integer()
+
+[home](#Content:)
+
+## data structure in R
+
+* cbind.data.frame(col, col) - створення dataframe
+* as.matrix(dataframe) - перетворення датафрейм в матрицю
+* cbind(col, col) - створення матриці по стовпчиках
+* rbind(row, row) - створення матриці по рядках
+* matrix(1:6, nrow=2, ncol=2) - створення матриці послідовності чисел
+* m[row, col] - вибір елементу матриці
+* m[row, col] <- 10 - заміна кокретного елементу матриці на інший
+* rowSums(m) - сума по рядкам матриці
+* colSums(m) - сума по колонкам матриці
+* head(values) - декілька перших елементів послідовності
+* paste() - функція склеювання строк або чисел
+* rep() - функція, яка створює список із повторюваних елементів
+* rep(c(1, 4, 5), each=2) - з кроком 2
+
+[home](#Content:)
